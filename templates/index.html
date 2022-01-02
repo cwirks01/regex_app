@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="margin-left:20%">
+    <h2>Select file(s) to upload</h2>
+    <p >
+        <ul class="messages" id="messages-list">
+            {% if messages %}
+                {% for message in messages %}
+                <li>
+                    {% if message.tags %}
+                         <div class="alert alert-{{ message.tags }} msg fade show" role="alert">{{ message }}</div>
+                    {% else %}
+                        <div class="alert alert-info msg fade show" role="alert">{{ message }}</div>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+        {% comment %} {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes style="margin-left:27%">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %} {% endcomment %}
+    </p>
+    <div class="container">
+            <div class="col1">
+                <form method="POST" action="/regex" enctype='multipart/form-data'>
+                    <input type="file" name="inputFileNames" accept=".txt, .pdf, .csv" multiple="true"/>
+                        <label>Load files for processing.</label>
+                            <br>
+                        <input type="file" name="inputFileNames" accept=".json" id="logo"/>
+                    <label>Load a library, if applicable.</label>
+                        <br>
+                    <label><input type="checkbox" id="renderViz" name="renderViz" checked>Display Visualization
+                        in Browser</label>
+                        
+            </div>
+            <div class="col2">
+                <textarea name="FreeInputText" placeholder="Free input text" cols="60" rows="20" minlength="10" autocomplete spellcheck></textarea>
+
+            </div>
+        <input type="submit" value="Submit" onclick="submitForms()"/>
+        </form>
+    </div>
+</div>
+{% endblock %}

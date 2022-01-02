@@ -1,0 +1,11 @@
+flask
+flask_pymongo
+gunicorn
+glob2
+pandas
+pymongo
+PyPDF2
+QtPy
+werkzeug
+wasabi
+waitress

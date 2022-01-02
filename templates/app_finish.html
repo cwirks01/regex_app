@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="margin-left:20%">
+    <h1>Your files are complete!</h1>
+    <div>
+        <div>
+        <a href="{{url_for('downloaded_file_db', filename='data.csv', file=allfiles['data.json'])}}" class="myLink">Download CSV</a>
+        <br>
+        <a href="{{url_for('downloaded_file_db', filename='data.json', file=allfiles['data.json'])}}" class="myLink">Download JSON</a>
+        </div>
+    </div>    
+    <div style="align-self: baseline;">
+        {% if all_items %}
+        {% for item in all_items %}
+        <div class="box-boarder">
+            <h5 style="text-align: center;">{{item[0]}}</h5>
+            <div style="text-align: left;">
+            <textarea name="{{item[0]}}" id="{{item[0]}}" cols="20" rows="10" style="line-height: 1.2;">
+                {{ "\r"+"\n".join(item[1]) }}
+            </textarea>
+            </div>
+            
+        </div>
+        {% endfor %}
+        {% endif %}
+        <br>
+    </div>
+</div>
+{% endblock %}
