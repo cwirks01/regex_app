@@ -1,3 +1,7 @@
+django
+django-environ
+djangorestframework
+environ
 flask
 flask_pymongo
 gunicorn

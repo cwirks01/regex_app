@@ -12,7 +12,8 @@
             "envFile": "${workspaceFolder}//.env",
             "justMyCode": false,
             "args": [
-                "runserver"
+                "runserver",
+                "--insecure"
             ],
             "django": true
         }

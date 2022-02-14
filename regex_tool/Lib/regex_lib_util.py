@@ -142,7 +142,7 @@ class regex_user_processor:
         self.userDir = self.userDir
 
     def create_env_dir(self):
-        # Loading main regex library for environment creation 
+        # Loading main regex library for environment creation
         with open("repo//regex_library.json", 'r') as library_file:
             load_library_file = json.load(library_file)
 

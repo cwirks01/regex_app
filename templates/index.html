@@ -29,7 +29,7 @@
     </p>
     <div class="container">
             <div class="col1">
-                <form method="POST" action="/regex" enctype='multipart/form-data'>
+                <form method="POST" action="" enctype='multipart/form-data'>{% csrf_token %}
                     <input type="file" name="inputFileNames" accept=".txt, .pdf, .csv" multiple="true"/>
                         <label>Load files for processing.</label>
                             <br>
